@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: bienimmolot-scraper
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bienimmolot_scraper.py
+    plan: free
