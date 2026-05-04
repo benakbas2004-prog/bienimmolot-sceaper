@@ -13,7 +13,8 @@ steps:
 - uses: actions/setup-python@v4
 with:
 python-version: '3.11'
-- run: pip install -r requirements.txt
-- run: python bienimmolot_scraper.py
-env:
-PYTHONUNBUFFERED: 1
+- name: Install
+run: pip install -r requirements.txt
+- name: Run
+run: python bienimmolot_scraper.py
+
