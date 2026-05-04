@@ -1,0 +1,19 @@
+name: BienImmoLot Scraper
+
+on:
+schedule:
+- cron: '0 * * * *'
+workflow_dispatch:
+
+jobs:
+scrape:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v3
+- uses: actions/setup-python@v4
+with:
+python-version: '3.11'
+- run: pip install -r requirements.txt
+- run: python bienimmolot_scraper.py
+env:
+PYTHONUNBUFFERED: 1
